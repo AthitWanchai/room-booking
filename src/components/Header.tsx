@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Hotel, Calendar, Users, Home, Settings } from 'lucide-react';
+import { Hotel, Calendar, Home, Settings } from 'lucide-react';
 
 const Header: React.FC = () => {
      const location = useLocation();
