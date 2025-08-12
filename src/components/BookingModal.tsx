@@ -31,7 +31,9 @@ const BookingModal: React.FC<BookingModalProps> = ({
      const [guestName, setGuestName] = useState('');
      const [phone, setPhone] = useState('');
      const [email, setEmail] = useState('');
-
+     const [checkIn, setCheckIn] = useState(searchData.checkIn || '');
+     const [checkOut, setCheckOut] = useState(searchData.checkOut || '');
+     
      if (!isOpen || !room) return null;
 
      const calculateNights = () => {
@@ -41,8 +43,6 @@ const BookingModal: React.FC<BookingModalProps> = ({
           return Math.ceil((checkOutDate.getTime() - checkInDate.getTime()) / (1000 * 60 * 60 * 24));
      };
 
-     const [checkIn, setCheckIn] = useState(searchData.checkIn || '');
-     const [checkOut, setCheckOut] = useState(searchData.checkOut || '');
      const nights = calculateNights();
      const totalPrice = nights * room.price;
 
